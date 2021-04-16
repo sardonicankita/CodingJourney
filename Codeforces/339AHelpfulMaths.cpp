@@ -3,17 +3,17 @@
 using namespace std;
 
 int main(){
-    int l,i,j;
-    char s[100];
-    scanf("%s",s);
-    l=strlen(s);
-    for(i=0;i<l;i+=2){
-        for(j=0;j<l-i-2;j+=2){
-            if(s[j]>s[j+2]){
-                swap(s[j],s[j+2]);
-            }
-        }
+    string s;
+    cin>>s;
+    vector<int>ans;
+    for(int i=0; i<s.size(); i+=2){
+            ans.push_back(s[i]);
     }
-    printf("%s",s);
-    return 0;
+    sort(ans.begin(), ans.end());
+
+    for(int i=0; i<ans.size()-1; i++)
+     cout<<ans[i]<<"+";
+
+     cout<<ans[ans.size()];
+   return 0;
 }
